@@ -3,11 +3,14 @@
 
     let player = "x";
     let gameover = false
-    let board = [
+    let emptyBoard = [
         ["", "", ""],
         ["", "", ""],
         ["", "", ""],
     ];
+
+    // copy the empty board via Clone
+    let board = structuredClone(emptyBoard);
 
     // --- is comparison
     function togglePlayer() {
@@ -31,12 +34,13 @@
 
         let rowMatch = checkRowMatch(x);
         let colMatch = checkColumnMatch(y);
-        let diagonalMatch = checkDiagonal();
+        let diaMatch = checkDiagonals();
         console.log("row", rowMatch);
         console.log("col", colMatch);
+        console.log("diag", diaMatch)
 
-        if (rowMatch || colMatch || diagonalMatch) {
-            gameover = true
+        if (rowMatch || colMatch || diaMatch) {
+            gameover = true;
         }
     }
 
@@ -60,23 +64,38 @@
         return false;
     }
 
-    function checkDiagonal() {
-        let item1 = board[2][0] && board[2][2];
-        let item2 = board[1][1] && board[1][1];
-        let item3 = board[0][2] && board[0][0];
-        if (item1 !== "" && item1 === item2 && item2 === item3) {
+    function checkDiagonals() {
+        let item1 = board[0][0];
+        let item2 = board[1][1];
+        let item3 = board[2][2];
+
+        if (item1 !== '' && item1 === item2 && item2 === item3) {
             return true;
-        } return false;
+        }
+        
+        item1 = board[0][2];
+        item2 = board[1][1];
+        item3 = board[2][0];
+        
+        if (item1 !== '' && item1 === item2 && item2 === item3) {
+            return true;
+        }
+        return false;
 
     }
 
      function restartGame() {
-      
+
+        board = structuredClone(emptyBoard);
       }
 
 </script>
 
 <h1>Let's Make Tic Tac Toe</h1>
+
+{#if gameover}
+<button on:click={restartGame}>Restart</button>
+{/if}
 
 <Player player="x" />
 
@@ -115,4 +134,4 @@
     }
 </style>
 
-branch
+
