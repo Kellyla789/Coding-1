@@ -1,6 +1,7 @@
 <h1>Portfolio Page</h1>
 <div class="portfolio">
 
+    <Parallax />
     <div class="flex-row">
         <div class="cut-off">
         <img width="300px" src="./CSS.jpg" alt=""/>
@@ -11,6 +12,7 @@
             <li>CSS properties like display, border, margins, etc.</li>
         </ul>
     </div>
+    <Parallax />
     <div class="flex-row">
         <div class="cut-off">
         <img width="300px" src="./Javascript.jpg" alt=""/>
@@ -21,6 +23,7 @@
             <li>parameters are part of the function signature that the function uses</li>
         </ul>
     </div>
+    <Parallax />
     <div class="flex-row">
         <div class="cut-off">
         <img width="300px" src="./HTML.jpg" alt=""/>
@@ -54,7 +57,7 @@
     }
 
     .flex-row {
-        margin-bottom: 20px;
+        margin-bottom: 80px;
     }
 
     .flex-row {
