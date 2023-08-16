@@ -1,24 +1,33 @@
 {
-	"name": "newproject",
+	"name": "tic-tac-toe",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+		"gh-pages": "npm run build && npx gh-pages -d build",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-static": "^2.0.3",
 		"@sveltejs/kit": "^1.5.0",
+		"artesgo-holokit": "^1.4.3",
+		"carbon-components-svelte": "^0.78.0",
+		"gh-pages": "^6.0.0",
+		"sass": "^1.63.6",
 		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
+		"uuid": "^9.0.0",
 		"vite": "^4.3.0"
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "^2.0.3"
+		"@sveltejs/adapter-static": "^2.0.3",
+		"@types/uuid": "^9.0.2"
 	}
 }
