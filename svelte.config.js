@@ -20,7 +20,7 @@ const config = {
 		}),
 
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/newproject' : '',
+			base: process.env.NODE_ENV === 'production' ? '/Coding-1' : '',
 		},
 		
 		// add this
